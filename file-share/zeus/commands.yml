@@ -1,0 +1,70 @@
+# ________ ____  __ __  ______     
+#  \___   // __ \|  |  \/  ___/    
+#   /    /\  ___/|  |  /\___ \    
+#  /_____ \\___  >____//____  >  
+#        \/    \/           \/  
+#                    Build System
+#                          v0.9.14
+#
+
+
+
+# default language
+language: bash
+
+# globals for all commands
+globals:
+
+# command data
+commands:
+    
+    # build the binary
+    build:
+        description: build project
+        dependencies:
+            - clean
+        buildNumber: true
+        exec: |
+            echo "build the binary"
+
+    # clean up the mess
+    clean:
+        description: clean up to prepare for build
+        exec: rm -rf bin/*
+    
+    # perform install
+    install:
+        dependencies:
+            - clean
+        description: install to $PATH
+        help: Install the application to the default system location
+        exec: |
+            echo "perform install"
+
+    build-frontend-nextjs:
+        description: static nextjs frontend build for embedding
+        exec: |
+            cd frontend/nextjs-file-share
+            rm -Rvf out
+            pnpm install
+            pnpm build
+            rm -Rvf ../../go/embeddedfrontend/nextjs
+            mv out ../../go/embeddedfrontend/nextjs
+
+
+    gomobile-bind:
+        description: generate ios server framework
+#        dependencies:
+#           - build-frontend-nextjs
+        exec: |
+            cd go
+            go get golang.org/x/mobile/bind/objc
+            go install golang.org/x/mobile/cmd/gomobile@latest
+            gomobile init
+            gomobile bind -v -o ../ios/FileShare/Frameworks/MobileServer.xcframework \
+                -target=ios github.com/foomo/gotsrpc-mobile-examples/file-share/mobile \
+                || echo "ios bind not working"
+# gomobile bind -ldflags=-extldflags=-Wl,-soname,libgojni.so -v -target=android/arm \
+#     -o ../GametickerAndroid/app/libs/mobile-server.aar \
+#     github.com/foomo/gotsrpc-mobile-examples/file-share/mobile \
+#     || echo "android bind not working"
