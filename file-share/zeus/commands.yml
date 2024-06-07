@@ -17,7 +17,10 @@ globals:
 
 # command data
 commands:
-    
+    gotsrpc:
+      description: generate stuff
+      exec: |
+        gotsrpc gotsrpc.yaml
     # build the binary
     build:
         description: build project

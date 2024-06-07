@@ -1,0 +1,25 @@
+# define go module mode
+module:
+  name: github.com/foomo/gotsrpc-mobile-examples/file-share
+  path: ./go
+
+# build targets define for which interfaces code will be generated in a package
+targets:
+  # the key of a target is arbitrary and solely serves readability
+  ticker:
+    # map of service path => interface ie which service will be exposed on
+    # which path
+    services:
+      /service/file-share: Service
+    # go package
+    package: github.com/foomo/gotsrpc-mobile-examples/file-share
+    # target file for TypeScript client generation
+    out: ./frontend/nextjs-file-share/services/client-file-share.ts
+    tsrpc:
+      - Service
+
+# mappings of go packages to typescript files
+mappings:
+  github.com/bestbytes/gameticker/server/services/ticker:
+    out: ./frontend/nextjs-file-share/services/vo-file-share.ts
+

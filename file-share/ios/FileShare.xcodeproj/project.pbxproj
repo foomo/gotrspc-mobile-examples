@@ -8,11 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		3D2BD5A72BF25F57000FAED8 /* FileShareApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2BD5A62BF25F57000FAED8 /* FileShareApp.swift */; };
-		3D2BD5A92BF25F57000FAED8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2BD5A82BF25F57000FAED8 /* ContentView.swift */; };
 		3D2BD5AB2BF25F58000FAED8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D2BD5AA2BF25F58000FAED8 /* Assets.xcassets */; };
 		3D2BD5AE2BF25F58000FAED8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D2BD5AD2BF25F58000FAED8 /* Preview Assets.xcassets */; };
 		3DBCB9292BF264F500F327FB /* MobileServer.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DBCB9282BF264F500F327FB /* MobileServer.xcframework */; };
 		3DBCB92A2BF264F500F327FB /* MobileServer.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3DBCB9282BF264F500F327FB /* MobileServer.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F6F6E0872C065D9700F20565 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F6E0862C065D9700F20565 /* WebView.swift */; };
+		F6F6E0892C065EBC00F20565 /* WebMessageHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F6E0882C065EBC00F20565 /* WebMessageHandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -32,10 +33,11 @@
 /* Begin PBXFileReference section */
 		3D2BD5A32BF25F57000FAED8 /* FileShare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FileShare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D2BD5A62BF25F57000FAED8 /* FileShareApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileShareApp.swift; sourceTree = "<group>"; };
-		3D2BD5A82BF25F57000FAED8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3D2BD5AA2BF25F58000FAED8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3D2BD5AD2BF25F58000FAED8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3DBCB9282BF264F500F327FB /* MobileServer.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = MobileServer.xcframework; path = FileShare/Frameworks/MobileServer.xcframework; sourceTree = "<group>"; };
+		F6F6E0862C065D9700F20565 /* WebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		F6F6E0882C065EBC00F20565 /* WebMessageHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebMessageHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,8 +72,9 @@
 		3D2BD5A52BF25F57000FAED8 /* FileShare */ = {
 			isa = PBXGroup;
 			children = (
+				F6F6E0882C065EBC00F20565 /* WebMessageHandler.swift */,
+				F6F6E0862C065D9700F20565 /* WebView.swift */,
 				3D2BD5A62BF25F57000FAED8 /* FileShareApp.swift */,
-				3D2BD5A82BF25F57000FAED8 /* ContentView.swift */,
 				3D2BD5AA2BF25F58000FAED8 /* Assets.xcassets */,
 				3D2BD5AC2BF25F58000FAED8 /* Preview Content */,
 			);
@@ -165,8 +168,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3D2BD5A92BF25F57000FAED8 /* ContentView.swift in Sources */,
+				F6F6E0872C065D9700F20565 /* WebView.swift in Sources */,
 				3D2BD5A72BF25F57000FAED8 /* FileShareApp.swift in Sources */,
+				F6F6E0892C065EBC00F20565 /* WebMessageHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
